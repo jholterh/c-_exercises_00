@@ -3,6 +3,7 @@
 #define CLAPTRAP_H
 
 #include <string>
+#include <iostream>
 
 class ClapTrap
 {
@@ -20,7 +21,7 @@ class ClapTrap
         void beRepaired(unsigned int amount);
 
     private:
-        std::string&    _name;
+        std::string     _name;
         int             _hit_points;
         int             _energy_points;
         int             _attack_damage;

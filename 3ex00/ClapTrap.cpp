@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(const std::string& name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
     std::cout << "Normal Constructor called" << std::endl;
 }
@@ -31,22 +31,22 @@ ClapTrap::~ClapTrap()
 
 // getters
 
-const std::string& get_name(void) const
+const std::string& ClapTrap::get_name(void) const
 {
     return _name;
 }
 
-int get_hit_points(void) const
+int ClapTrap::get_hit_points(void) const
 {
     return _hit_points;
 }
 
-int get_energy_points(void) const
+int ClapTrap::get_energy_points(void) const
 {
     return _energy_points;
 }
 
-int get_attack_damage(void) const
+int ClapTrap::get_attack_damage(void) const
 {
     return _attack_damage;
 }
@@ -54,7 +54,7 @@ int get_attack_damage(void) const
 
 // game methods
 
-void attack(const std::string& target)
+void ClapTrap::attack(const std::string& target)
 {
     if (_hit_points == 0 || _energy_points == 0)
         return ;
@@ -62,7 +62,7 @@ void attack(const std::string& target)
     std::cout << "ClapTrap " << _name << " attacks " << target << " , causing " << _attack_damage << " points of damage!" << std::endl;
 }
 
-void takeDamage(unsigned int amount)
+void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_hit_points == 0)
         return ;
@@ -71,7 +71,7 @@ void takeDamage(unsigned int amount)
         _hit_points = 0;
 }
 
-void beRepaired(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int amount)
 {
     if (_hit_points == 0 || _energy_points == 0)
         return ;

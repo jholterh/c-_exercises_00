@@ -5,7 +5,7 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 # Source and output
 SRC = main.cpp ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = fixed_point
+NAME = ClapTrap
 
 # Default rule
 all: $(NAME)
