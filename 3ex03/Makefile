@@ -5,7 +5,7 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 # Source and output
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = FragTrap
+NAME = DiamondTrap
 
 # Default rule
 all: $(NAME)
