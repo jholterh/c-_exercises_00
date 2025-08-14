@@ -25,6 +25,11 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
     return *this;
 }
 
+ScavTrap::ScavTrap() : ClapTrap("DefaultST_ClapTrap")
+{
+    std::cout << "ScavTrap: Default Constructor called" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap: Destructor called" << std::endl;

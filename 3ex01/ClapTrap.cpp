@@ -23,6 +23,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& other)
     return *this;
 }
 
+ClapTrap::ClapTrap() : _name("DefaultCT_ClapTrap"), _hit_points(10), _energy_points(10), _attack_damage(0)
+{
+    std::cout << "ClapTrap: Default Constructor called" << std::endl;
+}
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap: Destructor called" << std::endl;

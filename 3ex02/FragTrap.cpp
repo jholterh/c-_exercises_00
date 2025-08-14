@@ -25,7 +25,18 @@ FragTrap &FragTrap::operator=(const FragTrap& other)
     return *this;
 }
 
-FragTrap::~FragTrap() {}
+FragTrap::FragTrap() : ClapTrap("DefaultFT_ClapTrap")
+{
+    set_hit_points(100);
+    set_energy_points(100);
+    set_attack_damage(30);
+    std::cout << "FragTrap: Default Constructor called" << std::endl;
+}
+
+FragTrap::~FragTrap()
+{
+    std::cout << "FragTrap: Destructor called" << std::endl;
+}
 
 void FragTrap::attack(const std::string& target)
 {

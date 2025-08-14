@@ -11,6 +11,7 @@ class ClapTrap
         ClapTrap(const std::string& name);
         ClapTrap(const ClapTrap& copy);
         ClapTrap& operator=(const ClapTrap& other);
+        ClapTrap();
         ~ClapTrap();
         const std::string& get_name(void) const;
         int get_hit_points(void) const;
