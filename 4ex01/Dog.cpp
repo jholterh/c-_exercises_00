@@ -3,12 +3,14 @@
 Dog::Dog() : Animal()
 {
     type = "Dog";
+    brain = new Brain();
     std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
     type = "Dog";
+    brain = new Brain(*copy.brain);
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
@@ -17,7 +19,9 @@ Dog& Dog::operator=(const Dog &other)
     if (this != &other)
     {
         Animal::operator=(other);
-        type = "Dog";
+        type = other.type;
+        delete brain;
+        brain = new Brain(*other.brain);
         std::cout << "Dog assignment operator called" << std::endl;
     }
     return *this;
@@ -25,6 +29,7 @@ Dog& Dog::operator=(const Dog &other)
 
 Dog::~Dog()
 {
+    delete brain;
     std::cout << "Dog destructor called" << std::endl;
 }
 
