@@ -1,45 +1,32 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "WrongDog.hpp"
-
+#include "Brain.hpp"
 
 int main()
 {
-    // Correct hierarchy (with virtual)
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    // Create a Dog object dynamically
+    const Dog* luna = new Dog();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    // Copy construct a new Dog from luna
+    Dog diego(*luna);
 
-    i->makeSound(); // will output the cat sound!
-    j->makeSound(); // will output the dog sound!
-    meta->makeSound(); // will output the animal sound!
+    // Test assignment operator
+    Dog bella;
+    bella = diego; // This uses the assignment operator
 
-    delete meta;
-    delete j;
-    delete i;
+    // Test sounds
+    luna->makeSound();
+    diego.makeSound();
+    bella.makeSound();
 
-    std::cout << "\n---- WrongAnimal tests ----" << std::endl;
+    // Test deep copy: set an idea in one, check it's not in the other
+    diego.setIdea(0, "Chase the ball");
+    std::cout << "luna's idea[0]: " << luna->getIdea(0) << std::endl;
+    std::cout << "diego's idea[0]: " << diego.getIdea(0) << std::endl;
 
-    // Wrong hierarchy (no virtual)
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
-    const WrongAnimal* wrongDog = new WrongDog();
-
-    std::cout << wrongCat->getType() << " " << std::endl;
-    wrongCat->makeSound(); // will output WrongAnimal's sound, not WrongCat's!
-
-    std::cout << wrongDog->getType() << " " << std::endl;
-    wrongDog->makeSound(); // will output WrongAnimal's sound, not WrongDog's!
-
-    delete wrongMeta;
-    delete wrongCat;
-    delete wrongDog;
-
+    // Clean up
+    delete luna;
     return 0;
 }
+
