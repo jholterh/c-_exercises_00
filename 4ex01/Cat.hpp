@@ -6,6 +6,7 @@
 #include "Animal.hpp"
 #include <string>
 #include <iostream>
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -16,6 +17,8 @@ class Cat : public Animal
         ~Cat();
         void makeSound() const;
 
+    private:
+        Brain brain;
 };
 
 #endif
