@@ -3,6 +3,7 @@
 Cat::Cat() : Animal()
 {
     type = "Cat";
+    Brain::Brain();
     std::cout << "Cat constructor called" << std::endl;
 }
 
