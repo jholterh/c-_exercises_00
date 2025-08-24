@@ -24,7 +24,7 @@ int main()
     delete j;
     delete i;
 
-    std::cout << "---- WrongAnimal tests ----" << std::endl;
+    std::cout << "\n---- WrongAnimal tests ----" << std::endl;
 
     // Wrong hierarchy (no virtual)
     const WrongAnimal* wrongMeta = new WrongAnimal();
