@@ -3,13 +3,13 @@
 Character::Character(const std::string& name) : _name(name)
 {
     for (int i = 0; i < 4; ++i)
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
 }
 
 Character::Character(const Character& other) : _name(other._name)
 {
     for (int i = 0; i < 4; ++i)
-        _inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : nullptr;
+        _inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : NULL;
 }
 
 Character& Character::operator=(const Character& other)
@@ -21,7 +21,7 @@ Character& Character::operator=(const Character& other)
         {
             if (_inventory[i])
                 delete _inventory[i];
-            _inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : nullptr;
+            _inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : NULL;
         }
     }
     return *this;
@@ -57,7 +57,7 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= 4)
         return;
-    _inventory[idx] = nullptr;
+    _inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
