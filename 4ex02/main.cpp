@@ -8,6 +8,9 @@ int main()
     // Create a Dog object dynamically
     const Dog* luna = new Dog();
 
+    // to show that it's an abstract class:
+    // const Animal* failure = new Animal();
+
     // Copy construct a new Dog from luna
     Dog diego(*luna);
 
