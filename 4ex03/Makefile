@@ -3,7 +3,7 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 # Source and output
-SRC = main.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp
 OBJ = $(SRC:.cpp=.o)
 NAME = ice
 
